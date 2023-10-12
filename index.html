@@ -7,10 +7,19 @@
 <body>
     <!-- <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1> -->
     <div x-data="{message: 'Hello'}">
-        <button x-on:click="alert(message)">Say Hi</button>
-        <button x-data="{message:'Nested me'}" @click="alert(message)">Say Hi with @</button>
+        <h1 x-text="message"></h1>
+
+        <input type="text" x-bind:placeholder="message">
+        <input type="text" :placeholder="message">
+
+
+        <input type="text" x-model="message">
+
+        <!--Two way databinding-->
+
+        <button x-on:click="message='Hi'">Say Hi</button>
+        <button @click="message='bye'">Say bye</button>
     </div>
-    <button x-data="{message:'New me'}" @click="alert(message)">Say Hi with @</button>
 </body>
 
 </html>
