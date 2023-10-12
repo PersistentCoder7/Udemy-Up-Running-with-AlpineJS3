@@ -6,19 +6,11 @@
 
 <body>
     <!-- <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1> -->
-    <div x-data="{message: 'Hello'}">
-        <h1 x-text="message"></h1>
+    <div x-data="{first: 0, second:0}">
 
-        <input type="text" x-bind:placeholder="message">
-        <input type="text" :placeholder="message">
-
-
-        <input type="text" x-model="message">
-
-        <!--Two way databinding-->
-
-        <button x-on:click="message='Hi'">Say Hi</button>
-        <button @click="message='bye'">Say bye</button>
+        <input type="number" x-model.number.lazy="first">
+        <input type="number" x-model.number.lazy="second">=
+        <span x-text="first + second"></span>
     </div>
 </body>
 
