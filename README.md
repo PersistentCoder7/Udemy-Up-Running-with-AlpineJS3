@@ -1,8 +1,12 @@
 # [Learn Alpine.js: Up & Running with Alpine.js v3](https://www.udemy.com/home/my-courses/)
 
-
 [Koen Woortman](https://www.udemy.com/user/koen-woortman/)
-Professional Web Developer
+
+- Professional Web Developer
+
+## Extensions for VS Code
+
+Alpine.js intelliSense
 
 Alpine.js is an elegant and lightweight JavaScript framework which you can use to include interactivity in your web pages with minimal effort. I am **happy to welcome you** to my course on Alpine.js here on Udemy.
 
@@ -23,3 +27,7 @@ Alpine.js comes with a whole set of directives which allow you to easily manipul
 **About Me**
 
 My name is Koen, it is nice to meet you. Starting out at the age of 15 with iOS development I never lost my interest in Software Development. Currently I mainly keep myself occupied with web development. I am invested in multiple backend technologies and frameworks, such as Ruby on Rails, Django and Laravel. On the frontend side of projects I follow the development of React, Alpine.js and Vue.js closely.
+
+## Notes
+
+Every tag with x-data is considered as a single component. The scope of the data is restricted to children nodes

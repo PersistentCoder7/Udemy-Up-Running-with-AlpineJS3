@@ -5,7 +5,12 @@
 </head>
 
 <body>
-    <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1>
+    <!-- <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1> -->
+    <div x-data="{message: 'Hello'}">
+        <button x-on:click="alert(message)">Say Hi</button>
+        <button x-data="{message:'Nested me'}" @click="alert(message)">Say Hi with @</button>
+    </div>
+    <button x-data="{message:'New me'}" @click="alert(message)">Say Hi with @</button>
 </body>
 
 </html>
