@@ -6,12 +6,19 @@
 
 <body>
     <!-- <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1> -->
-    <div x-data="{first: 0, second:0}">
+    <div x-data="{show: false, page: ''}">
+        <button @click=" show=!show">Dropdown</button>
 
-        <input type="number" x-model.number.lazy="first">
-        <input type="number" x-model.number.lazy="second">=
-        <span x-text="first + second"></span>
-    </div>
+        <div x-show=" show">
+            <button @click="page = '',show=false"">Home</button>
+            <button @click=" page='profile' ,show=false"">Profile</button>
+            <button @click="page = 'settings',show=false"">Settings</button>
+        </div>
+
+    <h1 x-show=" page===''">Home</h1>
+    <h1 x-show=" page==='settings'">Settings</h1>
+    <h1 x-show=" page==='profile'">Profile</h1>
+</div>
 </body>
 
 </html>
