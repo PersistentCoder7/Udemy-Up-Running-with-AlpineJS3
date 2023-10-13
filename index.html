@@ -6,9 +6,13 @@
 
 <body>
     <!-- <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1> -->
-    <ul x-data="{users: ['You', 'Me','Someone Else']}">
-        <template x-for="user in users">
-            <li x-text="user"></li>
+    <ul x-data="{users: [
+        {id: 1,fname: 'Russell'},
+        {id: 2,fname: 'Beryl'},
+        {id: 3,fname: 'Kobe'}
+        ]}">
+        <template x-for="user in users" :key="user.id">
+            <li x-text="user.fname"></li>
         </template>
     </ul>
 </body>
