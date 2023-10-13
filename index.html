@@ -6,13 +6,11 @@
 
 <body>
     <!-- <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1> -->
-    <div x-data="{page: 'home'}">
-        <button @click="page = 'home'">Home</button>
-        <button @click=" page='profile' ">Profile</button>
-        <button @click=" page='settings' ">Settings</button>
-
-        <h1 x-text="page.charAt(0).toUpperCase() + page.slice(1)"></h1>
-    </div>
+    <ul x-data="{users: ['You', 'Me','Someone Else']}">
+        <template x-for="user in users">
+            <li x-text="user"></li>
+        </template>
+    </ul>
 </body>
 
 </html>
