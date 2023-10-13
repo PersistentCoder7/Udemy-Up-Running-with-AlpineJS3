@@ -6,13 +6,12 @@
 
 <body>
     <!-- <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1> -->
-    <ul x-data="{users: [
-        {id: 1,fname: 'Russell'},
-        {id: 2,fname: 'Beryl'},
-        {id: 3,fname: 'Kobe'}
-        ]}">
+    <ul x-data="{users: []}" x-init="users = await fetch('https://reqres.in/api/users')
+    .then(res=> res.json())
+    .then(r => r.data)
+    ">
         <template x-for="user in users" :key="user.id">
-            <li x-text="user.fname"></li>
+            <li x-text="user.first_name"></li>
         </template>
     </ul>
 </body>
