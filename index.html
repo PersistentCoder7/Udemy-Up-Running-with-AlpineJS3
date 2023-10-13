@@ -6,14 +6,22 @@
 
 <body>
     <!-- <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1> -->
-    <ul x-data="{users: []}" x-init="users = await fetch('https://reqres.in/api/users')
-    .then(res=> res.json())
-    .then(r => r.data)
-    ">
+    <ul x-data="usersList" x-init="users = await fetchUsers()">
         <template x-for="user in users" :key="user.id">
             <li x-text="user.first_name"></li>
         </template>
     </ul>
+    <script>
+        const usersList = {
+            users: [],
+            fetchUsers: () =>
+            {
+                return fetch('https://reqres.in/api/users')
+                    .then(res => res.json())
+                    .then(r => r.data);
+            }
+        }
+    </script>
 </body>
 
 </html>
