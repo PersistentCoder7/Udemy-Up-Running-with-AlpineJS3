@@ -2,28 +2,25 @@
 
 <head>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <style>
-        [x-cloak] {
-            display: none !important;
-        }
-    </style>
 </head>
 
 <body>
     <!-- <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1> -->
-    <div x-data="{show: false, page: ''}">
-        <button @click=" show=!show">Dropdown</button>
+    <div x-data="{page: ''}">
+        <button @click="page = ''">Home</button>
+        <button @click=" page='profile' ">Profile</button>
+        <button @click=" page='settings' ">Settings</button>
 
-        <div x-show=" show" x-cloak="">
-            <button @click="page = '',show=false"">Home</button>
-            <button @click=" page='profile' ,show=false"">Profile</button>
-            <button @click="page = 'settings',show=false"">Settings</button>
-        </div>
-
-    <h1 x-show=" page===''" x-cloak="">Home</h1>
-    <h1 x-show=" page==='settings'" x-cloak="">Settings</h1>
-    <h1 x-show=" page==='profile'" x-cloak="">Profile</h1>
-</div>
+        <template x-if="page === ''">
+            <h1>Home</h1>
+        </template>
+        <template x-if="page === 'settings'">
+            <h1>Settings</h1>
+        </template>
+        <template x-if="page === 'profile'">
+            <h1>Profile</h1>
+        </template>
+    </div>
 </body>
 
 </html>
